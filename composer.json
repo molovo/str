@@ -6,7 +6,7 @@
     }
   },
   "require": {
-    "PHP": ">=5.5",
+    "PHP": ">=5.3",
     "doctrine/inflector": "^1.1"
   },
   "require-dev": {
