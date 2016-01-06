@@ -18,7 +18,7 @@ class StrTest extends \Codeception\TestCase\Test
      */
     public function testNormalize($str, $expected)
     {
-        $this->assertEquals($expected, Str::normalize($str));
+        verify(Str::normalize($str))->equals($expected);
     }
 
     /**
@@ -46,7 +46,7 @@ class StrTest extends \Codeception\TestCase\Test
      */
     public function testTitle($str, $expected)
     {
-        $this->assertEquals($expected, Str::title($str));
+        verify(Str::title($str))->equals($expected);
     }
 
     /**
@@ -84,7 +84,7 @@ class StrTest extends \Codeception\TestCase\Test
      */
     public function testSlug($str, $expected)
     {
-        $this->assertEquals($expected, Str::slug($str));
+        verify(Str::slug($str))->equals($expected);
     }
 
     /**
@@ -123,7 +123,7 @@ class StrTest extends \Codeception\TestCase\Test
      */
     public function testSnakeCase($str, $expected)
     {
-        $this->assertEquals($expected, Str::snakeCase($str));
+        verify(Str::snakeCase($str))->equals($expected);
     }
 
     /**
@@ -162,7 +162,7 @@ class StrTest extends \Codeception\TestCase\Test
      */
     public function testCamelCase($str, $expected)
     {
-        $this->assertEquals($expected, Str::camelCase($str));
+        verify(Str::camelCase($str))->equals($expected);
     }
 
     /**
@@ -201,7 +201,7 @@ class StrTest extends \Codeception\TestCase\Test
      */
     public function testCamelCaps($str, $expected)
     {
-        $this->assertEquals($expected, Str::camelCaps($str));
+        verify(Str::camelCaps($str))->equals($expected);
     }
 
     /**
@@ -240,7 +240,7 @@ class StrTest extends \Codeception\TestCase\Test
      */
     public function testNamespaced($str, $expected)
     {
-        $this->assertEquals($expected, Str::namespaced($str));
+        verify(Str::namespaced($str))->equals($expected);
     }
 
     /**
@@ -277,9 +277,9 @@ class StrTest extends \Codeception\TestCase\Test
     public function testRandomString($length)
     {
         $str = Str::random($length);
-        $this->assertEquals(($length ?: 6), strlen($str));
-        $this->assertEquals(0, preg_match('/[^a-zA-Z0-9]/', $str, $matches));
-        $this->assertEmpty($matches);
+        verify(strlen($str))->equals($length ?: 6);
+        verify(preg_match('/[^a-zA-Z0-9]/', $str, $matches))->equals(0);
+        verify($matches)->isEmpty();
     }
 
     /**
@@ -319,6 +319,6 @@ class StrTest extends \Codeception\TestCase\Test
             $i++;
         }
 
-        $this->assertEquals(sizeof($strings), sizeof(array_unique($strings)));
+        verify(sizeof(array_unique($strings)))->equals(sizeof($strings));
     }
 }
