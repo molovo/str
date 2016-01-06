@@ -9,7 +9,7 @@ php:
 
 before_install:
   - composer self-update
-  - [[ "x$TRAVIS_PHP_VERSION" != "xhhvm" ]] && COVERAGE_FLAGS="--coverage --coverage-xml" # PHPUnit code coverage doesn't currently work under HHVM
+  - if [[ $TRAVIS_PHP_VERSION != 'hhvm' ]]; then COVERAGE_FLAGS="--coverage --coverage-xml"; fi # PHPUnit code coverage doesn't currently work under HHVM
 
 install:
   - composer update --dev
