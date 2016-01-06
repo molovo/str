@@ -9,8 +9,9 @@ php:
 
 before_install:
   - composer self-update
+  - [[ "x$TRAVIS_PHP_VERSION" != "xhhvm" ]] && COVERAGE_FLAGS="--coverage --coverage-xml" # PHPUnit code coverage doesn't currently work under HHVM
 
 install:
   - composer update --dev
 
-script: vendor/bin/codecept run --coverage
+script: vendor/bin/codecept run $COVERAGE_FLAGS
