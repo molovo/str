@@ -10,7 +10,6 @@ php:
 
 before_install:
   - composer self-update
-  - cd molovo/str
 
 install:
   - composer update --dev
