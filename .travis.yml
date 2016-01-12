@@ -15,3 +15,6 @@ install:
   - composer update --dev
 
 script: vendor/bin/codecept run $COVERAGE_FLAGS
+
+after_success:
+  - travis_retry php vendor/bin/coveralls
