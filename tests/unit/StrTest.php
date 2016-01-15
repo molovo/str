@@ -319,6 +319,6 @@ class StrTest extends \Codeception\TestCase\Test
             $i++;
         }
 
-        verify(sizeof(array_unique($strings)))->equals(sizeof($strings));
+        verify(count(array_unique($strings)))->equals(count($strings));
     }
 }
