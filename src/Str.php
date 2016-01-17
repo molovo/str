@@ -260,7 +260,7 @@ class Str
      *
      * @return string
      */
-    public static function singularize($text)
+    public static function singularize($str)
     {
         if (isset(static::$singularizeCache[$str])) {
             return static::$singularizeCache[$str];
