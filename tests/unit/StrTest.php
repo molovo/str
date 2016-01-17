@@ -19,6 +19,9 @@ class StrTest extends \Codeception\TestCase\Test
     public function testNormalize($str, $expected)
     {
         verify(Str::normalize($str))->equals($expected);
+
+        // Retry to test retrieval from cache
+        verify(Str::normalize($str))->equals($expected);
     }
 
     /**
@@ -46,6 +49,9 @@ class StrTest extends \Codeception\TestCase\Test
      */
     public function testTitle($str, $expected)
     {
+        verify(Str::title($str))->equals($expected);
+
+        // Retry to test retrieval from cache
         verify(Str::title($str))->equals($expected);
     }
 
@@ -84,6 +90,9 @@ class StrTest extends \Codeception\TestCase\Test
      */
     public function testSlug($str, $expected)
     {
+        verify(Str::slug($str))->equals($expected);
+
+        // Retry to test retrieval from cache
         verify(Str::slug($str))->equals($expected);
     }
 
@@ -124,6 +133,9 @@ class StrTest extends \Codeception\TestCase\Test
     public function testSnakeCase($str, $expected)
     {
         verify(Str::snakeCase($str))->equals($expected);
+
+        // Retry to test retrieval from cache
+        verify(Str::snakeCase($str))->equals($expected);
     }
 
     /**
@@ -162,6 +174,9 @@ class StrTest extends \Codeception\TestCase\Test
      */
     public function testCamelCase($str, $expected)
     {
+        verify(Str::camelCase($str))->equals($expected);
+
+        // Retry to test retrieval from cache
         verify(Str::camelCase($str))->equals($expected);
     }
 
@@ -202,6 +217,9 @@ class StrTest extends \Codeception\TestCase\Test
     public function testCamelCaps($str, $expected)
     {
         verify(Str::camelCaps($str))->equals($expected);
+
+        // Retry to test retrieval from cache
+        verify(Str::camelCaps($str))->equals($expected);
     }
 
     /**
@@ -220,7 +238,7 @@ class StrTest extends \Codeception\TestCase\Test
             ['testingCamelCase', 'TestingCamelCase'],
             ['TestingCamelCaps', 'TestingCamelCaps'],
             ['Testing Title Case', 'TestingTitleCase'],
-            ['shouldNotChange', 'ShouldNotChange'],
+            ['ShouldNotChange', 'ShouldNotChange'],
 
             // Test shouldn't fail with an empty dataset
             ['', ''],
@@ -240,6 +258,9 @@ class StrTest extends \Codeception\TestCase\Test
      */
     public function testNamespaced($str, $expected)
     {
+        verify(Str::namespaced($str))->equals($expected);
+
+        // Retry to test retrieval from cache
         verify(Str::namespaced($str))->equals($expected);
     }
 
