@@ -11,56 +11,56 @@ class Str
      *
      * @var string[]
      */
-    private static $normalizeCache   = [];
+    private static $normalizeCache = [];
 
     /**
      * Cache of values produced by Str::title.
      *
      * @var string[]
      */
-    private static $titleCache       = [];
+    private static $titleCache = [];
 
     /**
      * Cache of values produced by Str::snakeCase.
      *
      * @var string[]
      */
-    private static $snakeCaseCache   = [];
+    private static $snakeCaseCache = [];
 
     /**
      * Cache of values produced by Str::camelCaps.
      *
      * @var string[]
      */
-    private static $camelCapsCache   = [];
+    private static $camelCapsCache = [];
 
     /**
      * Cache of values produced by Str::camelCase.
      *
      * @var string[]
      */
-    private static $camelCaseCache   = [];
+    private static $camelCaseCache = [];
 
     /**
      * Cache of values produced by Str::slug.
      *
      * @var string[]
      */
-    private static $slugCache        = [];
+    private static $slugCache = [];
 
     /**
      * Cache of values produced by Str::namespaced.
      *
      * @var string[]
      */
-    private static $namespacedCache  = [];
+    private static $namespacedCache = [];
 
     /**
      * Cache of values produced by Str::pluralize.
      *
      * @var string[]
      */
-    private static $pluralizeCache   = [];
+    private static $pluralizeCache = [];
 
     /**
      * Cache of values produced by Str::singularize.
@@ -216,7 +216,7 @@ class Str
         $text = preg_replace('/[\\\]+/', '\\', $text);
         $text = preg_replace('/(^[\\\]|[\\\]$)/', '', $text);
 
-        return static::$namespacedCache[$str] = strtolower($text);
+        return static::$namespacedCache[$str] = $text;
     }
 
     /**
