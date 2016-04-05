@@ -210,7 +210,6 @@ class Str
         }
 
         $text = static::normalize($str);
-        $text = preg_replace('/((?<=\s)?[A-Z])/', ' $1', $text);
         $text = preg_replace('/[\s]+/', ' ', $text);
         $text = preg_replace('/[^a-z0-9\\\]/i', '\\', $text);
         $text = preg_replace('/[\\\]+/', '\\', $text);
